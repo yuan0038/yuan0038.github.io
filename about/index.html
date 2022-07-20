@@ -332,7 +332,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
+                        strings: ['渴望着，在一片属于自己的桃源上，自由地活着。',''],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
@@ -366,13 +366,23 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">1</a></span>
+    <span class="count"><a href="/">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">1</a></span>
+    <span class="name">分类</span>
+</div>
 
+
+
+<div class="statis">
+    <span class="count"><a href="/tags">2</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                     </div>
@@ -386,13 +396,23 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">1</a></span>
+    <span class="count"><a href="/">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">1</a></span>
+    <span class="name">分类</span>
+</div>
 
+
+
+<div class="statis">
+    <span class="count"><a href="/tags">2</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                                 </div>
@@ -540,7 +560,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,1],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,3],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -582,7 +602,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [],
+                data: [{"name":"图卷积神经网络","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -606,7 +626,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: []
+                data: ["图卷积神经网络","hexo"]
             }
         ],
         yAxis: [
@@ -619,7 +639,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [],
+                data: [1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -788,6 +808,18 @@
         <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;其他技能</div>
         <div class="tag-chips center-align">
             
+            
+            <a href="/tags/%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                <span class="chip center-align waves-effect waves-light chip-default">图卷积神经网络</span>
+            </a>
+            
+            
+            
+            <a href="/tags/hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            </a>
+            
+            
         </div>
     </div>
     
@@ -919,13 +951,13 @@
             
             
             
-            <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_container_site_pv" style='display:none'>
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
             </span>
             
             
-            <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_container_site_uv" style='display:none'>
                 |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
                     class="white-color"></span>&nbsp;人
             </span>
@@ -1134,7 +1166,7 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
+    <script src="/live2d-widget/autoload.js"></script>
 
 </body>
 
