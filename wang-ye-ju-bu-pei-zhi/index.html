@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建局部记录（仅供自己翻阅）, Yuan&#39;s Shangri-la">
+    <meta name="keywords" content="博客搭建局部记录（仅供自己翻阅）, 渊桑的桃源">
     <meta name="description" content="Deep Learning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>博客搭建局部记录（仅供自己翻阅） | Yuan&#39;s Shangri-la</title>
+    <title>博客搭建局部记录（仅供自己翻阅） | 渊桑的桃源</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Yuan's Shangri-la" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="渊桑的桃源" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -45,7 +45,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Yuan&#39;s Shangri-la</span>
+                    <span class="logo-span">渊桑的桃源</span>
                 </a>
             </div>
             
@@ -144,7 +144,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Yuan&#39;s Shangri-la</div>
+        <div class="logo-name">渊桑的桃源</div>
         <div class="logo-desc">
             
             Deep Learning
@@ -538,25 +538,25 @@ npm install
 </ul>
 <h4 id="6-Hexo主题："><a href="#6-Hexo主题：" class="headerlink" title="6. Hexo主题："></a>6. Hexo主题：</h4><p><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a>如何使用该主题及其配置，讲得非常详细。</p>
 <h2 id="二、-关于文章"><a href="#二、-关于文章" class="headerlink" title="二、 关于文章"></a>二、 关于文章</h2><h3 id="1-发布文章"><a href="#1-发布文章" class="headerlink" title="1. 发布文章"></a>1. 发布文章</h3><p>建议先在根目录的<code>_config.yml</code>设置</p>
-<pre><code>post_asset_folder: true 
-</code></pre>
+<pre class="line-numbers language-yml"><code class="language-yml">post_asset_folder: true 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这能够在你发布新文章的md时，同时生成一个同名文件夹来保存资源。这样做可以让等等在写文章时以相对路径的方式来调用图片，非常简便。</p>
 <p>发布新文章，比如:</p>
 <pre class="line-numbers language-shell"><code class="language-shell">hexo new post "xxx"
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后再<strong>source&#x2F;_post</strong>下可以看到一个xxx.md和xxx的文件夹，你可以把这篇文章使用到的图片放到文件夹中，然后在md中调用该图片的方法是：</p>
 <p>其中，example.jpg是文件夹中的图片名字， 后面那个是图的注释。</p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token entity" title="&#123;">&amp;#123;</span>% asset_img example.jpg This is an example image %<span class="token entity" title="&#125;">&amp;#125;</span>
+<pre class="line-numbers language-text"><code class="language-text">&#123;% asset_img example.jpg This is an example image %&#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>详细讲解可见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">此文</a>。</p>
 <p>关于文献引用时的语法见<a target="_blank" rel="noopener" href="https://murphy.tech/posts/49cc9dcc.htm">下图3</a>:</p>
 <img src="/wang-ye-ju-bu-pei-zhi/%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE.png" class="" title="图3: 引用文献的语法">
 
 <h3 id="2-缩短文章对应的网址以便SEO"><a href="#2-缩短文章对应的网址以便SEO" class="headerlink" title="2. 缩短文章对应的网址以便SEO"></a>2. 缩短文章对应的网址以便SEO</h3><p>在根目录的<code>_config.yml</code>文件下修改permalink如下：</p>
-<pre class="line-numbers language-text"><code class="language-text"># permalink: :year/:month/:day/:title/
+<pre class="line-numbers language-yml"><code class="language-yml"># permalink: :year/:month/:day/:title/
 permalink: :title/
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="三、-音乐播放"><a href="#三、-音乐播放" class="headerlink" title="三、 音乐播放"></a>三、 音乐播放</h2><p><a target="_blank" rel="noopener" href="https://blog.17lai.site/posts/cf0f47fd/#%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90%E5%92%8C%E8%A7%86%E9%A2%91">这篇</a>+<a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS#option">这篇</a></p>
+<h2 id="三、-音乐播放"><a href="#三、-音乐播放" class="headerlink" title="三、 音乐播放"></a>三、 音乐播放</h2><p><a target="_blank" rel="noopener" href="https://blog.17lai.site/posts/cf0f47fd/#%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90%E5%92%8C%E8%A7%86%E9%A2%91">这篇</a>+<a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS#option">这篇</a>和<a target="_blank" rel="noopener" href="https://www.ottoli.cn/wordpress/anm">这篇</a></p>
 <p>在文章中加入网易云音乐：网易云找到歌、歌单后生成外链，直接塞到文章里即可。比如：</p>
 <div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32303030&auto=1&height=66" ></iframe></div>
 
