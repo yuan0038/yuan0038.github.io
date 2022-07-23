@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="渊桑的桃源" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="渊桑的桃源" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -66,7 +68,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="" class="waves-effect waves-light">
 
       
       <i class="fas fa-book" style="zoom: 0.6;"></i>
@@ -388,10 +390,17 @@
         line-height: 1.5rem;
     }
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
+    .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255,0.7);
+    border-radius: 10px;
+    box-shadow: 0 10px 35px 2px
+    rgba(0, 0, 0, .15), 0 5px 15px
+    rgba(0, 0, 0, .07), 0 2px 5px -5px
+    rgba(0, 0, 0, .1) !important;
     }
+
 
     #toc-content {
         padding-bottom: 30px;
@@ -508,7 +517,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>hexo+github搭建博客的完整教学直接看<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">这篇</a>，下面是我搭建过程中查阅资料的记录，十分感谢大佬们的无私奉献。</p>
-<h2 id="一、-相关环境的搭建"><a href="#一、-相关环境的搭建" class="headerlink" title="一、 相关环境的搭建"></a>一、 相关环境的搭建</h2><h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>Node.js 是一个事件驱动 I&#x2F;O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。</p>
+<h2 id="一、-相关环境的搭建"><a href="#一、-相关环境的搭建" class="headerlink" title="一、 相关环境的搭建"></a>一、 相关环境的搭建</h2><h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>Node.js 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。</p>
 <p>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种：</p>
 <ul>
 <li>允许用户从NPM服务器下载别人编写的第三方包到本地使用。</li>
@@ -516,7 +525,7 @@
 <li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-tutorial.html">上文内容来源</a></p>
-<br/>
+<br>
 
 <p>去<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">node.js</a>,下载node.js，npm和它是捆绑在一块的。</p>
 <p>可用node-v和npm -v查看node.js和npm的版本，我的如下</p>
@@ -532,19 +541,19 @@
 <pre class="line-numbers language-shell"><code class="language-shell">npm install hexo-cli -g
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>-g的意思为 将模块安装到全局（全局路径可以通过<strong>npm root -g</strong>查看）</p>
-<p>比如我的是 &#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules（你用npm安装时它会生成一个node_modules的文件夹来保存模块）。</p>
+<p>比如我的是 /usr/local/lib/node_modules（你用npm安装时它会生成一个node_modules的文件夹来保存模块）。</p>
 <p>可用<strong>hexo -v</strong>查看hexo 是否安装成功。</p>
 <h3 id="3-新建项目"><a href="#3-新建项目" class="headerlink" title="3. 新建项目"></a>3. 新建项目</h3><p>比如我的项目名字叫<strong>test</strong>，在其中<strong>新建一个叫Hexo的文件夹</strong>，并在Hexo中运行下面两行命令来初始化hexo相关组件，结果如下<strong>图1</strong>所示：</p>
 <pre class="line-numbers language-shell"><code class="language-shell">hexo init 
 npm install
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<img src="/wang-ye-ju-bu-pei-zhi/hexo_init%E7%BB%93%E6%9E%9C.png" class="" title="图1：hexo init 后Hexo文件夹">
+<img src="/2022/071962316/hexo_init%E7%BB%93%E6%9E%9C.png" class="" title="图1：hexo init 后Hexo文件夹">
 
 
 
 <blockquote>
 <p>提一下 package.json这个文件，这个文件主要是用来记录这个项目的详细信息的，它会将我们在项目开发中所要用到的包，以及项目的详细信息等记录在这个项目中。如<strong>图2</strong>所示：</p>
-<img src="/wang-ye-ju-bu-pei-zhi/package.json%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9.png" class="" title="图2: package.json文件内容">
+<img src="/2022/071962316/package.json%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9.png" class="" title="图2: package.json文件内容">
 
 <pre class="line-numbers language-shell"><code class="language-shell">npm install --save xxx`  简写：npm install -s xxx
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -554,7 +563,7 @@ npm install
 <h3 id="4-安装git及github与本地项目连接"><a href="#4-安装git及github与本地项目连接" class="headerlink" title="4. 安装git及github与本地项目连接"></a>4. 安装git及github与本地项目连接</h3><p>安装git和github建项目与本地项目连接直接看大佬<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">这篇</a>，我自己懒得再敲一遍了。</p>
 <h4 id="5-hexo常用命令（引自这篇）："><a href="#5-hexo常用命令（引自这篇）：" class="headerlink" title="5. hexo常用命令（引自这篇）："></a>5. hexo常用命令（引自<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/11161411">这篇</a>）：</h4><ul>
 <li>hexo s等价于 hexo server #Hexo 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。</li>
-<li>hexo g 等价于 hexo generate #生成静态网页 (执行 $ hexo g 后会在站点根目录下生成public&gt;文件夹, hexo会将”&lt;font &#x2F;blog&#x2F;source&#x2F;“ 下面的.md后缀的文件编译为.html后缀的文件,存放在”&#x2F;blog&#x2F;public&#x2F; “ 路径下)</li>
+<li>hexo g 等价于 hexo generate #生成静态网页 (执行 $ hexo g 后会在站点根目录下生成public&gt;文件夹, hexo会将”&lt;font /blog/source/“ 下面的.md后缀的文件编译为.html后缀的文件,存放在”/blog/public/ “ 路径下)</li>
 <li>hexo d 等价于 hexo deploy #将本地数据部署到远端服务器(如github)</li>
 <li>hexo clean #清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的public文件夹</li>
 </ul>
@@ -566,13 +575,13 @@ npm install
 <p>发布新文章，比如:</p>
 <pre class="line-numbers language-shell"><code class="language-shell">hexo new post "xxx"
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后再<strong>source&#x2F;_post</strong>下可以看到一个xxx.md和xxx的文件夹，你可以把这篇文章使用到的图片放到文件夹中，然后在md中调用该图片的方法是：</p>
+<p>然后再<strong>source/_post</strong>下可以看到一个xxx.md和xxx的文件夹，你可以把这篇文章使用到的图片放到文件夹中，然后在md中调用该图片的方法是：</p>
 <p>其中，example.jpg是文件夹中的图片名字， 后面那个是图的注释。</p>
-<pre class="line-numbers language-text"><code class="language-text">&#123;% asset_img example.jpg This is an example image %&#125;
+<pre class="line-numbers language-text"><code class="language-text">{% asset_img example.jpg This is an example image %}
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>详细讲解可见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">此文</a>。</p>
 <p>关于文献引用时的语法见<a target="_blank" rel="noopener" href="https://murphy.tech/posts/49cc9dcc.htm">下图3</a>:</p>
-<img src="/wang-ye-ju-bu-pei-zhi/%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE.png" class="" title="图3: 引用文献的语法">
+<img src="/2022/071962316/%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE.png" class="" title="图3: 引用文献的语法">
 
 <h3 id="2-缩短文章对应的网址以便SEO"><a href="#2-缩短文章对应的网址以便SEO" class="headerlink" title="2. 缩短文章对应的网址以便SEO"></a>2. 缩短文章对应的网址以便SEO</h3><p>在根目录的<code>_config.yml</code>文件下修改permalink如下：</p>
 <pre class="line-numbers language-yml"><code class="language-yml"># permalink: :year/:month/:day/:title/
@@ -580,18 +589,18 @@ permalink: :title/
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="三、-音乐播放"><a href="#三、-音乐播放" class="headerlink" title="三、 音乐播放"></a>三、 音乐播放</h2><p><a target="_blank" rel="noopener" href="https://blog.17lai.site/posts/cf0f47fd/#%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90%E5%92%8C%E8%A7%86%E9%A2%91">这篇</a>+<a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS#option">这篇</a>和<a target="_blank" rel="noopener" href="https://www.ottoli.cn/wordpress/anm">这篇</a></p>
 <p>在文章中加入网易云音乐：网易云找到歌、歌单后生成外链，直接塞到文章里即可。比如：</p>
-<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32303030&auto=1&height=66" ></iframe></div>
+<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=32303030&amp;auto=1&amp;height=66"></iframe></div>
 
 <h2 id="四、-live2d（看板娘）设置"><a href="#四、-live2d（看板娘）设置" class="headerlink" title="四、 live2d（看板娘）设置"></a>四、 live2d（看板娘）设置</h2><h3 id="1-大佬版的流程"><a href="#1-大佬版的流程" class="headerlink" title="1. 大佬版的流程"></a>1. <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58325389">大佬版的流程</a></h3><p>下图4来源自标题的教程，看板娘的属性在waifu.css中设置。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">大佬的live2d链接</a></p>
-<img src="/wang-ye-ju-bu-pei-zhi/live2d.png" class="" title="图4: 大佬版的live2d添加流程">
+<img src="/2022/071962316/live2d.png" class="" title="图4: 大佬版的live2d添加流程">
 
 
 
 <h3 id="2-基础版的流程"><a href="#2-基础版的流程" class="headerlink" title="2. 基础版的流程"></a>2. 基础版的流程</h3><p>下文内容来源：<a target="_blank" rel="noopener" href="https://blog.yleao.com/2018/0805/hexo%E4%B8%8A%E7%9A%84live2d%E5%BA%94%E7%94%A8.html">hexo上的live2d应用</a>（写的真是太好了啊啊）</p>
 <h4 id="2-1-安装hexo-helper-live2d"><a href="#2-1-安装hexo-helper-live2d" class="headerlink" title="2.1. 安装hexo-helper-live2d"></a>2.1. 安装<a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d">hexo-helper-live2d</a></h4><pre class="line-numbers language-shell"><code class="language-shell">npm install --save hexo-helper-live2d
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<br/>
+<br>
 
 <h4 id="2-2-配置根目录下的-config-yml"><a href="#2-2-配置根目录下的-config-yml" class="headerlink" title="2.2. 配置根目录下的_config.yml"></a>2.2. 配置根目录下的_config.yml</h4><pre class="line-numbers language-yml"><code class="language-yml">## Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
@@ -619,8 +628,8 @@ live2d:
     mobile: # 是否适用于移动端
       show: true
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-3-模型的挑选"><a href="#2-3-模型的挑选" class="headerlink" title="2.3. 模型的挑选"></a>2.3. 模型的挑选</h4><h5 id="方法一：https-github-com-xiazeyu-live2d-widget-models"><a href="#方法一：https-github-com-xiazeyu-live2d-widget-models" class="headerlink" title="方法一：https://github.com/xiazeyu/live2d-widget-models"></a><strong>方法一</strong>：<a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a></h5><p>按照上面的方式装完模型后，它会存储在Hexo&#x2F;node_modules，然后将包名输入位于<code>_config.yml</code>的<code>model.use</code>中。</p>
-</br>
+<h4 id="2-3-模型的挑选"><a href="#2-3-模型的挑选" class="headerlink" title="2.3. 模型的挑选"></a>2.3. 模型的挑选</h4><h5 id="方法一：https-github-com-xiazeyu-live2d-widget-models"><a href="#方法一：https-github-com-xiazeyu-live2d-widget-models" class="headerlink" title="方法一：https://github.com/xiazeyu/live2d-widget-models"></a><strong>方法一</strong>：<a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a></h5><p>按照上面的方式装完模型后，它会存储在Hexo/node_modules，然后将包名输入位于<code>_config.yml</code>的<code>model.use</code>中。</p>
+<br>
 
 <h5 id="方法二：live2d-models子目录名称"><a href="#方法二：live2d-models子目录名称" class="headerlink" title="方法二：live2d_models子目录名称"></a><strong>方法二：live2d_models子目录名称</strong></h5><ul>
 <li><p>在博客根目录下创建一个<code>live2d_models</code>文件夹.</p>
@@ -667,7 +676,7 @@ live2d:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/wang-ye-ju-bu-pei-zhi/">http://example.com/wang-ye-ju-bu-pei-zhi/</a>
+                    <a href="http://example.com/2022/071962316.html">http://example.com/2022/071962316.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -828,7 +837,7 @@ live2d:
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">让渊桑尝尝蜜雪冰城的冰淇淋的甜头？</h4>
+            <h4 class="reward-title">让渊桑尝尝蜜雪冰淇淋的甜头？</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -881,7 +890,7 @@ live2d:
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/wang-ye-ju-bu-pei-zhi/">
+                <a href="/2022/071962316.html">
                     <div class="card-image">
                         
                         
@@ -927,7 +936,7 @@ live2d:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tu-juan-ji-shen-jing-wang-luo-xue-xi/">
+                <a href="/2022/071831020.html">
                     <div class="card-image">
                         
                         
@@ -1390,6 +1399,14 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
     <script src="/live2d-widget/autoload.js"></script>
+    <script type="text/javascript">
+// //只在桌面版网页启用特效
+//     var windowWidth = $(window).width();
+//     if (windowWidth > 768) {
+//         document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+//     }
+//     </script>
+
 
 </body>
 

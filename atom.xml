@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-21T01:07:25.419Z</updated>
+  <updated>2022-07-22T12:09:20.535Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>博客搭建局部记录（仅供自己翻阅）</title>
-    <link href="http://example.com/wang-ye-ju-bu-pei-zhi/"/>
-    <id>http://example.com/wang-ye-ju-bu-pei-zhi/</id>
+    <link href="http://example.com/2022/071962316.html"/>
+    <id>http://example.com/2022/071962316.html</id>
     <published>2022-07-19T00:11:24.000Z</published>
-    <updated>2022-07-21T01:07:25.419Z</updated>
+    <updated>2022-07-22T12:09:20.535Z</updated>
     
     
       
@@ -41,10 +41,10 @@
   
   <entry>
     <title>图卷积神经网络学习</title>
-    <link href="http://example.com/tu-juan-ji-shen-jing-wang-luo-xue-xi/"/>
-    <id>http://example.com/tu-juan-ji-shen-jing-wang-luo-xue-xi/</id>
+    <link href="http://example.com/2022/071831020.html"/>
+    <id>http://example.com/2022/071831020.html</id>
     <published>2022-07-18T08:40:12.000Z</published>
-    <updated>2022-07-18T11:22:35.952Z</updated>
+    <updated>2022-07-22T10:13:42.390Z</updated>
     
     
       
@@ -66,10 +66,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/hello-world/"/>
-    <id>http://example.com/hello-world/</id>
+    <link href="http://example.com/2022/071716107.html"/>
+    <id>http://example.com/2022/071716107.html</id>
     <published>2022-07-17T07:45:25.614Z</published>
-    <updated>2022-07-18T10:50:37.280Z</updated>
+    <updated>2022-07-22T10:13:42.391Z</updated>
     
     
       
