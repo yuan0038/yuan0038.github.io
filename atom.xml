@@ -6,15 +6,40 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-22T12:09:20.535Z</updated>
+  <updated>2022-08-05T06:30:14.015Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>桃源的渊桑</name>
+    <name>渊桑</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(Torch)深度学习小项目搭建(一):项目的参数配置</title>
+    <link href="http://example.com/2022/080540937.html"/>
+    <id>http://example.com/2022/080540937.html</id>
+    <published>2022-08-05T05:30:32.000Z</published>
+    <updated>2022-08-05T06:30:14.015Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="http://example.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="argparse" scheme="http://example.com/tags/argparse/"/>
+    
+  </entry>
   
   <entry>
     <title>博客搭建局部记录（仅供自己翻阅）</title>

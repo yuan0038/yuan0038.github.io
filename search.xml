@@ -1,6 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>(Torch)深度学习小项目搭建(一):项目的参数配置</title>
+    <url>/2022/080540937.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="argparse（命令行参数解析器）"><a href="#argparse（命令行参数解析器）" class="headerlink" title="argparse（命令行参数解析器）"></a>argparse（命令行参数解析器）</h2><p>这玩意学了忘，建项目要用时忘了再学。。打算跟它清算干净了。</p>
+<p>大体流程如下：创建解析器-&gt;添加参数-&gt;解析参数</p>
+<h3 id="1-1-创建解析器"><a href="#1-1-创建解析器" class="headerlink" title="1.1 创建解析器"></a>1.1 创建解析器</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+parser<span class="token operator">=</span>argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="1-2-添加参数"><a href="#1-2-添加参数" class="headerlink" title="1.2 添加参数"></a>1.2 添加参数</h3><pre class="line-numbers language-python"><code class="language-python">parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>add_argument()方法</strong>常用参数：</p>
+<p><strong>type</strong>：指定参数的类型</p>
+<p><strong>default</strong>：参数默认值</p>
+<p><strong>help</strong>：运行-h时，help的内容随参数一同显示</p>
+<p><strong>action</strong>：常用值: store_true,store_false</p>
+<pre class="line-numbers language-tex"><code class="language-tex">转载自https://www.zhihu.com/question/56692630
+关于store_true 触发action时为真，不触发则为假，store_false相反
+parser.add_argument('-c', action='store_true')
+#python test.py -c         => c是true（触发）
+#python test.py             => c是false（无触发）
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><u>命令行的参数分为<strong>位置参数</strong>和<strong>可选参数</strong></u></p>
+<p>比如添加一个可选参数可以如下（解析器默认将<strong>’-‘符号当前缀</strong>的参数认成<strong>可选参数</strong>）</p>
+<pre class="line-numbers language-python"><code class="language-python">parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-f'</span><span class="token punctuation">,</span><span class="token string">'--foo'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 命令行用输入参数时这两种都能表示，这是种约定俗成的写法，单字母-，多字母--</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>添加一个位置参数（不用’-‘就是位置参数）,<strong>位置参数必须给定配置</strong>,见下例：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#文件名为test.py</span>
+<span class="token keyword">import</span> argparse
+parser<span class="token operator">=</span>argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
+args<span class="token operator">=</span>parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>x<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的代码：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">python test.py             =>error: the following arguments are required: x
+python test.py 12345       =>12345
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>多个位置参数时，根据位置参数的代码顺序给定位置参数配置，也即在输入的命令行中，<strong>除去所有<code>-|--</code>开头的参数及其带上的参数值之外，剩下的参数都为位置参数</strong>，其顺序依次对应使用<em>add_argument</em>注册的位置参数顺序。</p>
+<h3 id="1-3解析参数"><a href="#1-3解析参数" class="headerlink" title="1.3解析参数"></a>1.3解析参数</h3><pre class="line-numbers language-python"><code class="language-python">args<span class="token operator">=</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它将检查命令行，把每个参数转换为适当的类型然后调用相应的操作</p>
+<h3 id="1-4-其他"><a href="#1-4-其他" class="headerlink" title="1.4 其他"></a>1.4 其他</h3><p><strong>①</strong>再聊聊<code>argparse.ArgumentParser()</code>常用的两个参数吧(对我来说，emm)。</p>
+<p><strong>description</strong>：用来写一段内容，描述程序想要做的事情。</p>
+<p><strong>fromfile_prefix_char</strong>:从文件读取参数，文件名参数的前缀(默认None)。比如：比如传入‘@’,则任何以 @ 开头的参数会被当成文件处理并被文件中的内容所替换。这种参数读取方法适用于参数量较大，不好在命令行直接输入的情况。</p>
+<p>文件的读取方法是一行读取1个。（ps:如果是可选参数那个后面那个参数就是它的值）。 此处跟后面有呼应。</p>
+<p>例子：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'args.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+    fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'-f\nbar'</span><span class="token punctuation">)</span>
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span>fromfile_prefix_chars<span class="token operator">=</span><span class="token string">'@'</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-f'</span><span class="token punctuation">)</span>
+args<span class="token operator">=</span>parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'@args.txt'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#相当于parser.parse_args(['-f','bar'])</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>f<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#>> bar</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>②argparse通常会跟sys模块一块用</strong></p>
+<p><strong>sys.argv</strong>  就是一个从程序外部获取参数的桥梁。其本质是一个存储命令行参数的<strong>列表</strong>,<code>sys.argv[0]</code>为程序名本身  </p>
+<hr>
+
+<hr>
+
+<p><strong>下面是个例子</strong></p>
+<p>比如我想实现：python train.py cfg.txt  实现把cfg.txt（用于存储可选参数和对应值）中的参数加载到train.py(内含参数解析器来接受命令行参数)，要怎么写？</p>
+<p>假设cfg.txt内容如下(很丑是吧，等等改)：</p>
+<pre class="line-numbers language-text"><code class="language-text">--data_path
+xxx
+--img_height
+200
+--img_width
+200
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>train.py内容如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#写完parser的内容</span>
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> argparse
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">"GAT"</span><span class="token punctuation">,</span>fromfile_prefix_chars<span class="token operator">=</span><span class="token string">'@'</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--data_path'</span><span class="token punctuation">,</span>    type<span class="token operator">=</span>str<span class="token punctuation">,</span>help<span class="token operator">=</span><span class="token string">"the path of your datasets"</span><span class="token punctuation">,</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--img_width'</span><span class="token punctuation">,</span>    type<span class="token operator">=</span>int<span class="token punctuation">,</span>help<span class="token operator">=</span><span class="token string">"the area width you choose for random crop graph "</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--img_height'</span><span class="token punctuation">,</span>   type<span class="token operator">=</span>int<span class="token punctuation">,</span>help<span class="token operator">=</span><span class="token string">"the area height you choose for random crop graph "</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#解析参数（结合上面的sys.argv的介绍去理解）：</span>
+<span class="token keyword">if</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">.</span>__len__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">:</span>
+    argsfile_with_prefix<span class="token operator">=</span><span class="token string">'@'</span><span class="token operator">+</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    args<span class="token operator">=</span>parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">[</span>argsfile_with_prefix<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    args<span class="token operator">=</span>parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后命令行到脚本对应目录后（用pycharm的命令行会自动找到路径的），输入下行左侧的命令，可得右侧结果</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># python train.py cfg.txt   => Namespace(data_path='xxx', img_width=200, img_height=200)
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后关于参数文件不美观的问题（前面说了，<strong>默认读取文件参数的方法是一行读一个</strong>）,文件读参是通过parser自身的<code>convert_arg_line_to_args()</code>方法。此方法接受从参数文件读取的字符串形式的单个参数 <em>arg_line</em>。 它返回从该字符串解析出的参数列表。 <strong>此方法将在每次按顺序从参数文件读取一行时被调用一次</strong>。</p>
+<img src="/2022/080540937/%E5%86%85%E9%83%A8%E4%BB%A3%E7%A0%81.png" class="" title="argparse.ArgumentParser的内部代码">
+
+<p>要让它从不美观变到可读性变强，要怎么做到如下的变化？</p>
+<img src="/2022/080540937/%E6%94%B9%E5%89%8D.png" class="">
+
+<img src="/2022/080540937/%E6%94%B9%E5%90%8E.png" class="">
+
+<p>思路如下： 重载<strong>convert_arg_line_to_args()</strong>,将参数文件每一行进行切分，装到一个数组返回， 直接一行就写完。。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">convert_arg_line_to_args</span><span class="token punctuation">(</span>arg_line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span>  arg_line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>整体代码如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 文件名train.py 配置文件cfg.txt内容在上面</span>
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> argparse
+
+<span class="token keyword">def</span> <span class="token function">convert_arg_line_to_args</span><span class="token punctuation">(</span>arg_line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span>  arg_line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">"GAT"</span><span class="token punctuation">,</span>fromfile_prefix_chars<span class="token operator">=</span><span class="token string">'@'</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>convert_arg_line_to_args <span class="token operator">=</span> convert_arg_line_to_args
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--data_path'</span><span class="token punctuation">,</span>    type<span class="token operator">=</span>str<span class="token punctuation">,</span>help<span class="token operator">=</span><span class="token string">"the path of your datasets"</span><span class="token punctuation">,</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--img_width'</span><span class="token punctuation">,</span>    type<span class="token operator">=</span>int<span class="token punctuation">,</span>help<span class="token operator">=</span><span class="token string">"the area width you choose for random crop graph "</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--img_height'</span><span class="token punctuation">,</span>   type<span class="token operator">=</span>int<span class="token punctuation">,</span>help<span class="token operator">=</span><span class="token string">"the area height you choose for random crop graph "</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">.</span>__len__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">:</span>
+    argsfile_with_prefix<span class="token operator">=</span><span class="token string">'@'</span><span class="token operator">+</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    args<span class="token operator">=</span>parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">[</span>argsfile_with_prefix<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    args<span class="token operator">=</span>parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell"># python train.py cfg.txt   => Namespace(data_path='xxx', img_width=200, img_height=200)
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>argparse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/071716107.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>十分感谢大佬做出这么优秀的主题！<br>本博客参考来源：</p>
