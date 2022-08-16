@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Nginx学习, 渊桑的桃源">
+    <meta name="keywords" content="代理相关概念介绍, 渊桑的桃源">
     <meta name="description" content="Deep Learning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Nginx学习 | 渊桑的桃源</title>
+    <title>代理相关概念介绍 | 渊桑的桃源</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -336,12 +336,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Nginx学习</h1>
+                    <h1 class="description center-align post-title">代理相关概念介绍</h1>
                 </div>
             </div>
         </div>
@@ -462,16 +462,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Nginx/">
-                                <span class="chip bg-color">Nginx</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/" class="post-category">
+                                搭建网站
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -514,17 +519,17 @@
                 <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>虽然是科班出身，搭个网站疯狂补漏，丢人！所以这篇文章可能写得很幼稚。大佬跳过。</p>
 <h2 id="2-代理"><a href="#2-代理" class="headerlink" title="2. 代理"></a>2. 代理</h2><p>先讲一下C-S架构：</p>
 <p><strong>C(client)<strong>客户端，</strong>S(server)<strong>服务端。CS架构即</strong>客户端</strong>通过接受用户的请求，通过网络向<strong>服务端</strong>提出请求；服务端接受请求后，将数据返回给<strong>客户端</strong>，<strong>客户端</strong>再将数据呈现给用户。如图1所示:</p>
-<img src="/2022/08161732/CS%E6%9E%B6%E6%9E%84.png" class="" title="图1: CS架构示意图">
+
 
 <br>
 
 <p><u><strong>代理</strong>的意思就是找个中间人来帮忙干事情。根据是客户端还是服务端主动使用代理，代理可分为<strong>正向代理</strong>和<strong>反向代理</strong>。</u></p>
 <h3 id="2-1-正向代理"><a href="#2-1-正向代理" class="headerlink" title="2.1 正向代理"></a>2.1 正向代理</h3><p><strong>正向代理就是客户端主动使用代理服务器帮自己干活</strong>。其实就是<u>客户端将请求发送给代理服务器，代理服务器(中间人)代替客户端发送请求给服务端，服务端返回数据给代理服务器，代理服务器再将数据返回给客户端。</u>如图2所示：记住，这里是客户端主动使用代理服务器，所以把他俩框一块了。</p>
-<img src="/2022/08161732/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.png" class="" title="图2: 正向代理">
+
 
 <p>因为服务端将信息返回给向它提交请求的代理服务器，所以对于服务端来说代理服务器就是其客户端，原始客户端其实是看不到的(即透明的)，所以<strong>客户端可通过使用正向代理隐藏自己的IP</strong>。正向代理常见应用场景就是你主动用某些软件fān qiáng（绕过网络审查）。</p>
 <h3 id="2-2-反向代理"><a href="#2-2-反向代理" class="headerlink" title="2.2 反向代理"></a>2.2 反向代理</h3><p>反向代理则是<strong>服务端主动使用代理服务器</strong>。即在反向代理中，<u>客户端发送的请求是先被传给代理服务器，代理服务器再将请求发送给服务端，服务端返回数据给代理服务器，代理服务器再将数据返回给客户端。</u>如图3所示：</p>
-<img src="/2022/08161732/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" class="" title="图3: 反向代理">
+
 
 <p>所以在这个流程中，客户端发送请求和接受数据的直接对象都是代理服务器，即对于客户端来说，服务端其实是透明的。<strong>所以说服务端可以通过使用反向代理隐藏自己的IP</strong>。反向代理常见应用就是<strong>负载均衡</strong>、<strong>提高服务器的安全</strong>，这里就不展开了。</p>
 <hr>
@@ -534,7 +539,7 @@
 <li><strong>二者的本质区别在于是谁主动使用代理服务器，客户端主动使用就是正向代理，服务端主动使用就是反向代理。</strong>从上面的两段描述中你可以知道二者不是互斥的关系，即我客户端可以用代理服务器来隐藏自己；与此同时，我服务端也可以用代理服务器来隐藏自己。(搁这玩谍战呢)</li>
 <li>作用不同：正向代理主要是用来解决访问限制的问题。而反向代理则是提供负载均衡、安全防护等作用。</li>
 </ol>
-<img src="/2022/08161732/%E6%BC%82%E4%BA%AE.png" class="">
+
 
 
 
@@ -604,11 +609,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Nginx/">
-                                    <span class="chip bg-color">Nginx</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -785,9 +786,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Nginx学习">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="代理相关概念介绍">
                         
-                        <span class="card-title">Nginx学习</span>
+                        <span class="card-title">代理相关概念介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -802,21 +803,17 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            渊桑
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/" class="post-category">
+                                    搭建网站
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Nginx/">
-                        <span class="chip bg-color">Nginx</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
