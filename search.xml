@@ -176,7 +176,7 @@ parser<span class="token punctuation">.</span>add_argument<span class="token pun
       </tags>
   </entry>
   <entry>
-    <title>博客搭建局部记录（仅供自己翻阅）</title>
+    <title>博客搭建局部记录</title>
     <url>/2022/071962316.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>hexo+github搭建博客的完整教学直接看<a href="https://zhuanlan.zhihu.com/p/35668237">这篇</a>，下面是我搭建过程中查阅资料的记录，十分感谢大佬们的无私奉献。</p>
 <h2 id="一、-相关环境的搭建"><a href="#一、-相关环境的搭建" class="headerlink" title="一、 相关环境的搭建"></a>一、 相关环境的搭建</h2><h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>Node.js 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。</p>
