@@ -6,7 +6,7 @@
   <link href="https://www.yuansblog.site/atom.xml" rel="self"/>
   
   <link href="https://www.yuansblog.site/"/>
-  <updated>2022-08-05T06:30:14.015Z</updated>
+  <updated>2022-08-16T06:09:38.641Z</updated>
   <id>https://www.yuansblog.site/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nginx学习</title>
+    <link href="https://www.yuansblog.site/2022/08161732.html"/>
+    <id>https://www.yuansblog.site/2022/08161732.html</id>
+    <published>2022-08-16T02:48:48.000Z</published>
+    <updated>2022-08-16T06:09:38.641Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Nginx" scheme="https://www.yuansblog.site/tags/Nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>(Torch)深度学习小项目搭建(一):项目的参数配置</title>
