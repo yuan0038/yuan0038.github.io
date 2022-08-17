@@ -43,4 +43,3 @@ if (isset($json['expressions']))
 
 header("Content-type: application/json");
 echo $jsonCompatible->json_encode($json);
-?>
