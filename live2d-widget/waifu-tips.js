@@ -203,6 +203,7 @@ function loadWidget(config) {
 
 	async function loadModelList() {
 		const response = await fetch(`${apiPath}model_list.json`);
+
 		modelList = await response.json();
 	}
 
@@ -216,6 +217,7 @@ function loadWidget(config) {
 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
 		} else {
 			if (!modelList) await loadModelList();
+			console.log(modelList)
 			const target = randomSelection(modelList.models[modelId]);
 			loadlive2d("live2d", `${apiPath}model/${target}/index.json`);
 			console.log(` 路径${apiPath}model/${target}/index.json`)
