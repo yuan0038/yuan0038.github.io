@@ -202,8 +202,8 @@ function loadWidget(config) {
 	})();
 
 	async function loadModelList() {
-		const response = await fetch(`${cdnPath}model_list.json`);
-		//const response = await fetch(`${apiPath}model_list.json`);
+		//const response = await fetch(`${cdnPath}model_list.json`);
+		const response = await fetch(`${apiPath}model_list.json`);
 		modelList = await response.json();
 	}
 
