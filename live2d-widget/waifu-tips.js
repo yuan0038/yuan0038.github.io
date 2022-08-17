@@ -222,6 +222,7 @@ function loadWidget(config) {
 			loadlive2d("live2d", `${apiPath}model/${target}/index.json`);
 			console.log(` 路径${apiPath}model/${target}/index.json`)
 			//loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
+			console.log(`${apiPath}get/?id=${modelId}-${modelTexturesId}`);
 			console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
 		}
 	}
@@ -236,16 +237,16 @@ function loadWidget(config) {
 			showMessage("我的新衣服好看嘛？", 4000, 10);
 		} else {
 			// 可选 "rand"(随机), "switch"(顺序)
-			// fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
-			// 	.then(response => response.json())
-			// 	.then(result => {
-			// 		if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
-			// 		else loadModel(modelId, result.textures.id, "我的新衣服好看嘛？");
-			// 	});
-			if (!modelList) await loadModelList();
-			const target = randomSelection(modelList.models[modelId]);
-			loadlive2d("live2d", `${apiPath}model/${target}/index.json`);
-			showMessage("我的新衣服好看嘛？", 4000, 10);
+			fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
+				.then(response => response.json())
+				.then(result => {
+					if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
+					else loadModel(modelId, result.textures.id, "我的新衣服好看嘛？");
+				});
+			// if (!modelList) await loadModelList();
+			// const target = randomSelection(modelList.models[modelId]);
+			// loadlive2d("live2d", `${apiPath}model/${target}/index.json`);
+			// showMessage("我的新衣服好看嘛？", 4000, 10);
 		}
 	}
 
