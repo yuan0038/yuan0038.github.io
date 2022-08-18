@@ -6,7 +6,7 @@
   <link href="https://www.yuansblog.site/atom.xml" rel="self"/>
   
   <link href="https://www.yuansblog.site/"/>
-  <updated>2022-08-16T23:35:00.173Z</updated>
+  <updated>2022-08-18T01:36:32.359Z</updated>
   <id>https://www.yuansblog.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Nginx学习</title>
+    <title>代理介绍</title>
     <link href="https://www.yuansblog.site/2022/08161732.html"/>
     <id>https://www.yuansblog.site/2022/08161732.html</id>
     <published>2022-08-16T02:48:48.000Z</published>
-    <updated>2022-08-16T23:35:00.173Z</updated>
+    <updated>2022-08-18T01:36:32.359Z</updated>
     
     
       
@@ -34,8 +34,10 @@
     
     
     
-    <category term="搭建网站" scheme="https://www.yuansblog.site/categories/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
+    <category term="学习" scheme="https://www.yuansblog.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
+    
+    <category term="代理 搭建网站" scheme="https://www.yuansblog.site/tags/%E4%BB%A3%E7%90%86-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
@@ -44,7 +46,7 @@
     <link href="https://www.yuansblog.site/2022/080540937.html"/>
     <id>https://www.yuansblog.site/2022/080540937.html</id>
     <published>2022-08-05T05:30:32.000Z</published>
-    <updated>2022-08-16T06:56:46.219Z</updated>
+    <updated>2022-08-18T01:36:32.357Z</updated>
     
     
       
@@ -57,10 +59,10 @@
     
     
     
-    <category term="深度学习" scheme="https://www.yuansblog.site/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://www.yuansblog.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="argparse" scheme="https://www.yuansblog.site/tags/argparse/"/>
+    <category term="argparse 深度学习" scheme="https://www.yuansblog.site/tags/argparse-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -69,7 +71,7 @@
     <link href="https://www.yuansblog.site/2022/071962316.html"/>
     <id>https://www.yuansblog.site/2022/071962316.html</id>
     <published>2022-07-19T00:11:24.000Z</published>
-    <updated>2022-08-16T06:59:56.402Z</updated>
+    <updated>2022-08-18T01:36:32.360Z</updated>
     
     
       
@@ -82,10 +84,10 @@
     
     
     
-    <category term="搭建网站" scheme="https://www.yuansblog.site/categories/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
+    <category term="学习" scheme="https://www.yuansblog.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="hexo" scheme="https://www.yuansblog.site/tags/hexo/"/>
+    <category term="hexo 搭建网站" scheme="https://www.yuansblog.site/tags/hexo-%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
