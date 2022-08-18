@@ -218,8 +218,8 @@ function loadWidget(config) {
 		} else {
 			// if (!modelList) await loadModelList();
 			// console.log(modelList)
-			const target = randomSelection(modelList.models[modelId]);
-			loadlive2d("live2d", `${apiPath}model/${target}/index.json`);
+
+			loadlive2d("live2d", `${apiPath}model/Potion-Maker/Tia/index.json`);
 			// console.log(` 路径${apiPath}model/${target}/index.json`)
 			console.log(`${apiPath}get/?id=${modelId}-${modelTexturesId}`);
 			//loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
