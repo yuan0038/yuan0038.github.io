@@ -221,7 +221,7 @@ function loadWidget(config) {
 
 			loadlive2d("live2d", `${apiPath}model/Potion-Maker/Tia/index.json`);
 			// console.log(` 路径${apiPath}model/${target}/index.json`)
-			console.log(`${apiPath}get/?id=${modelId}-${modelTexturesId}`);
+			//console.log(`${apiPath}get/?id=${modelId}-${modelTexturesId}`);
 			//loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
 
 			console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
