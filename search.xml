@@ -328,4 +328,26 @@ live2d:
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Linux命令备忘录</title>
+    <url>/2022/081932238.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="1-清空一排指定进程名（有时候多线程跑代码会有问题emm）"><a href="#1-清空一排指定进程名（有时候多线程跑代码会有问题emm）" class="headerlink" title="1. 清空一排指定进程名（有时候多线程跑代码会有问题emm）"></a>1. 清空一排指定进程名（有时候多线程跑代码会有问题emm）</h3><p><code>ps -ef | grep 进程名称 | awk '{print $2}' | xargs kill -9</code></p>
+<p>其中 ：</p>
+<ul>
+<li>ps -ef 是linux 里查看所有进程的命令。</li>
+<li>grep httpd 所有含有关键字”httpd”的进程</li>
+<li>awk ‘{print $2}’ 输出第二列的PID</li>
+<li>xargs 是将获取到的多个PID标准输入转为命令行参数。</li>
+<li>kill -9 杀掉xargs获取到的对应的PID</li>
+</ul>
+<p>转载自<a href="https://www.cnblogs.com/yoyoketang/p/12804933.html">https://www.cnblogs.com/yoyoketang/p/12804933.html</a></p>
+<h3 id="2-清空所有显卡显存（有时候多线程加载数据会有僵尸进程清不掉）"><a href="#2-清空所有显卡显存（有时候多线程加载数据会有僵尸进程清不掉）" class="headerlink" title="2. 清空所有显卡显存（有时候多线程加载数据会有僵尸进程清不掉）"></a>2. 清空所有显卡显存（有时候多线程加载数据会有僵尸进程清不掉）</h3><p><code>sudo fuser -v /dev/nvidia* |awk '{for(i=1;i&lt;=NF;i++)print "kill -9 " $i;}' | sudo sh</code></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>linux命令</tag>
+      </tags>
+  </entry>
 </search>
