@@ -62,9 +62,9 @@
     <category term="学习" scheme="https://www.yuansblog.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="搭建网站" scheme="https://www.yuansblog.site/tags/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
-    
     <category term="代理" scheme="https://www.yuansblog.site/tags/%E4%BB%A3%E7%90%86/"/>
+    
+    <category term="搭建网站" scheme="https://www.yuansblog.site/tags/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
@@ -116,9 +116,9 @@
     <category term="学习" scheme="https://www.yuansblog.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="hexo" scheme="https://www.yuansblog.site/tags/hexo/"/>
-    
     <category term="搭建网站" scheme="https://www.yuansblog.site/tags/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="hexo" scheme="https://www.yuansblog.site/tags/hexo/"/>
     
   </entry>
   

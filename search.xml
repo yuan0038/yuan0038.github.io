@@ -161,6 +161,50 @@ parser<span class="token punctuation">.</span>add_argument<span class="token pun
       </tags>
   </entry>
   <entry>
+    <title>代理介绍</title>
+    <url>/2022/08161732.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>虽然是科班出身，搭个网站疯狂补漏，丢人！所以这篇文章可能写得很幼稚。大佬跳过。</p>
+<h2 id="2-代理"><a href="#2-代理" class="headerlink" title="2. 代理"></a>2. 代理</h2><p>先讲一下C-S架构：</p>
+<p><strong>C(client)<strong>客户端，</strong>S(server)<strong>服务端。CS架构即</strong>客户端</strong>通过接受用户的请求，通过网络向<strong>服务端</strong>提出请求；服务端接受请求后，将数据返回给<strong>客户端</strong>，<strong>客户端</strong>再将数据呈现给用户。如图1所示:</p>
+<img src="/2022/08161732/CS%E6%9E%B6%E6%9E%84.png" class="" title="图1: CS架构示意图">
+
+<br>
+
+<p><u><strong>代理</strong>的意思就是找个中间人来帮忙干事情。根据是客户端还是服务端主动使用代理，代理可分为<strong>正向代理</strong>和<strong>反向代理</strong>。</u></p>
+<h3 id="2-1-正向代理"><a href="#2-1-正向代理" class="headerlink" title="2.1 正向代理"></a>2.1 正向代理</h3><p><strong>正向代理就是客户端主动使用代理服务器帮自己干活</strong>。其实就是<u>客户端将请求发送给代理服务器，代理服务器(中间人)代替客户端发送请求给服务端，服务端返回数据给代理服务器，代理服务器再将数据返回给客户端。</u>如图2所示：记住，这里是客户端主动使用代理服务器，所以把他俩框一块了。</p>
+<img src="/2022/08161732/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.png" class="" title="图2: 正向代理">
+
+<p>因为服务端将信息返回给向它提交请求的代理服务器，所以对于服务端来说代理服务器就是其客户端，原始客户端其实是看不到的(即透明的)，所以<strong>客户端可通过使用正向代理隐藏自己的IP</strong>。正向代理常见应用场景就是你主动用某些软件fān qiáng（绕过网络审查）。</p>
+<h3 id="2-2-反向代理"><a href="#2-2-反向代理" class="headerlink" title="2.2 反向代理"></a>2.2 反向代理</h3><p>反向代理则是<strong>服务端主动使用代理服务器</strong>。即在反向代理中，<u>客户端发送的请求是先被传给代理服务器，代理服务器再将请求发送给服务端，服务端返回数据给代理服务器，代理服务器再将数据返回给客户端。</u>如图3所示：</p>
+<img src="/2022/08161732/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" class="" title="图3: 反向代理">
+
+<p>所以在这个流程中，客户端发送请求和接受数据的直接对象都是代理服务器，即对于客户端来说，服务端其实是透明的。<strong>所以说服务端可以通过使用反向代理隐藏自己的IP</strong>。反向代理常见应用就是<strong>负载均衡</strong>、<strong>提高服务器的安全</strong>，这里就不展开了。</p>
+<hr>
+
+<p>最后总结一下二者区别:</p>
+<ol>
+<li><strong>二者的本质区别在于是谁主动使用代理服务器，客户端主动使用就是正向代理，服务端主动使用就是反向代理。</strong>从上面的两段描述中你可以知道二者不是互斥的关系，即我客户端可以用代理服务器来隐藏自己；与此同时，我服务端也可以用代理服务器来隐藏自己。(搁这玩谍战呢)</li>
+<li>作用不同：正向代理主要是用来解决访问限制的问题。而反向代理则是提供负载均衡、安全防护等作用。</li>
+</ol>
+<img src="/2022/08161732/%E6%BC%82%E4%BA%AE.png" class="">
+
+
+
+
+
+
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.csdn.net/weixin_44404384/article/details/114675894">1.正向代理和反向代理详解（纯小白必看 最好懂的白话文教程）</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>代理</tag>
+        <tag>搭建网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建局部记录</title>
     <url>/2022/071962316.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>hexo+github搭建博客的完整教学直接看<a href="https://zhuanlan.zhihu.com/p/35668237">这篇</a>，下面是我搭建过程中查阅资料的记录，十分感谢大佬们的无私奉献。</p>
@@ -302,52 +346,8 @@ live2d:
         <category>学习</category>
       </categories>
       <tags>
+        <tag>搭建网站</tag>
         <tag>hexo</tag>
-        <tag>搭建网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代理介绍</title>
-    <url>/2022/08161732.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>虽然是科班出身，搭个网站疯狂补漏，丢人！所以这篇文章可能写得很幼稚。大佬跳过。</p>
-<h2 id="2-代理"><a href="#2-代理" class="headerlink" title="2. 代理"></a>2. 代理</h2><p>先讲一下C-S架构：</p>
-<p><strong>C(client)<strong>客户端，</strong>S(server)<strong>服务端。CS架构即</strong>客户端</strong>通过接受用户的请求，通过网络向<strong>服务端</strong>提出请求；服务端接受请求后，将数据返回给<strong>客户端</strong>，<strong>客户端</strong>再将数据呈现给用户。如图1所示:</p>
-<img src="/2022/08161732/CS%E6%9E%B6%E6%9E%84.png" class="" title="图1: CS架构示意图">
-
-<br>
-
-<p><u><strong>代理</strong>的意思就是找个中间人来帮忙干事情。根据是客户端还是服务端主动使用代理，代理可分为<strong>正向代理</strong>和<strong>反向代理</strong>。</u></p>
-<h3 id="2-1-正向代理"><a href="#2-1-正向代理" class="headerlink" title="2.1 正向代理"></a>2.1 正向代理</h3><p><strong>正向代理就是客户端主动使用代理服务器帮自己干活</strong>。其实就是<u>客户端将请求发送给代理服务器，代理服务器(中间人)代替客户端发送请求给服务端，服务端返回数据给代理服务器，代理服务器再将数据返回给客户端。</u>如图2所示：记住，这里是客户端主动使用代理服务器，所以把他俩框一块了。</p>
-<img src="/2022/08161732/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.png" class="" title="图2: 正向代理">
-
-<p>因为服务端将信息返回给向它提交请求的代理服务器，所以对于服务端来说代理服务器就是其客户端，原始客户端其实是看不到的(即透明的)，所以<strong>客户端可通过使用正向代理隐藏自己的IP</strong>。正向代理常见应用场景就是你主动用某些软件fān qiáng（绕过网络审查）。</p>
-<h3 id="2-2-反向代理"><a href="#2-2-反向代理" class="headerlink" title="2.2 反向代理"></a>2.2 反向代理</h3><p>反向代理则是<strong>服务端主动使用代理服务器</strong>。即在反向代理中，<u>客户端发送的请求是先被传给代理服务器，代理服务器再将请求发送给服务端，服务端返回数据给代理服务器，代理服务器再将数据返回给客户端。</u>如图3所示：</p>
-<img src="/2022/08161732/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" class="" title="图3: 反向代理">
-
-<p>所以在这个流程中，客户端发送请求和接受数据的直接对象都是代理服务器，即对于客户端来说，服务端其实是透明的。<strong>所以说服务端可以通过使用反向代理隐藏自己的IP</strong>。反向代理常见应用就是<strong>负载均衡</strong>、<strong>提高服务器的安全</strong>，这里就不展开了。</p>
-<hr>
-
-<p>最后总结一下二者区别:</p>
-<ol>
-<li><strong>二者的本质区别在于是谁主动使用代理服务器，客户端主动使用就是正向代理，服务端主动使用就是反向代理。</strong>从上面的两段描述中你可以知道二者不是互斥的关系，即我客户端可以用代理服务器来隐藏自己；与此同时，我服务端也可以用代理服务器来隐藏自己。(搁这玩谍战呢)</li>
-<li>作用不同：正向代理主要是用来解决访问限制的问题。而反向代理则是提供负载均衡、安全防护等作用。</li>
-</ol>
-<img src="/2022/08161732/%E6%BC%82%E4%BA%AE.png" class="">
-
-
-
-
-
-
-
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.csdn.net/weixin_44404384/article/details/114675894">1.正向代理和反向代理详解（纯小白必看 最好懂的白话文教程）</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>搭建网站</tag>
-        <tag>代理</tag>
       </tags>
   </entry>
 </search>
